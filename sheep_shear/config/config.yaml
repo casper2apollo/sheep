@@ -1,0 +1,14 @@
+paths:
+  sheep_cache: "sheep_shear/config/sheap_cache.json"
+
+sec:
+  user_agent: "casper casper@2apollo.com"
+  timeout: 30
+  max_retries: 5
+  backoff_base: 2.0
+
+kafka:
+  kafka_properties_path: "sheep_shear/kafka/kafka.properties"
+  sleep_time: 600
+  heart_beat_freq: 3600
+  queue_maxsize: 100_000
