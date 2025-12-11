@@ -2,7 +2,7 @@ import os
 import math
 import pytest
 
-from sheep_shear.yarn.collect_wool import CollectWool
+from sheep.yarn.collect_wool import CollectWool
 
 # run tests with 
 # RUN_SEC_INTEGRATION=1 python -m pytest -q

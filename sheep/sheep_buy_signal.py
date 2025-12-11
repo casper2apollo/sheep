@@ -12,30 +12,28 @@
     
 # send buy signal to kafka producer
 
-import json, time, logging
+import json, time
 import pandas as pd
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
-from sheep_shear.yarn.collect_wool import CollectWool
-from sheep_shear.yarn.clean_wool import clean_wool
-from sheep_shear.herd.call_herd import SecEdgarClient
+from sheep.yarn.collect_wool import CollectWool
+from sheep.yarn.clean_wool import clean_wool
+from sheep.herd.call_herd import SecEdgarClient
 
 
-log = logging.getLogger(__name__)
-
-
-
-class SheepShear:
+class SheepBuySignal:
     
-    def __init__(self, sec_cfg: dict, path_cfg: dict, buy_signal_queue):
+    def __init__(self, sec_cfg: dict, path_cfg: dict, buy_signal_queue, log):
         self.sec_cfg = sec_cfg
         self.path_cfg = path_cfg
         self.buy_signal_queue = buy_signal_queue
         self.TZ = ZoneInfo("America/Toronto")
         
+        self.log = log
         
-    def _next_even_hour_boundary(now: datetime) -> datetime:
+        
+    def _next_even_hour_boundary(self, now: datetime) -> datetime:
         """move to the next top-of-hour
         if it's an odd hour, skip to the next hour so we land on an even hour (2,4,6,...)
         """
@@ -45,7 +43,7 @@ class SheepShear:
         return nxt
     
     
-    def _parse_utc(s: str | None):
+    def _parse_utc(self, s: str | None):
         """Parse SEC-style ISO strings to tz-aware UTC datetimes, or NaT."""
         if not s:
             return pd.NaT
@@ -53,6 +51,10 @@ class SheepShear:
         return pd.to_datetime(s, utc=True, errors="coerce")
     
     
+    def _utc_now_z(self) -> str:
+        return datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+    
+
     def _filings_to_df(self, filings):
         df = pd.DataFrame([f.__dict__ for f in filings])  # dataclass -> dict
         # Make datetime columns tz-aware UTC
@@ -63,7 +65,7 @@ class SheepShear:
         return df
     
     
-    def _filter_recent(df: pd.DataFrame, dt_utc: datetime) -> pd.DataFrame:
+    def _filter_recent(self, df: pd.DataFrame, dt_utc: datetime) -> pd.DataFrame:
         # ensure dt_utc is tz-aware UTC
         if dt_utc.tzinfo is None:
             dt_utc = dt_utc.replace(tzinfo=timezone.utc)
@@ -73,21 +75,6 @@ class SheepShear:
         return df[df["event_dt_utc"] > pd.Timestamp(dt_utc)].copy()
     
     
-    
-    def clean_wool(records: dict, expected_symbol: str) -> dict:
-        sym = (records.get("issuer_symbol") or "").strip().upper()
-        exp = (expected_symbol or "").strip().upper()
-        a_or_d = (records.get("A_or_D") or "").strip().upper()
-
-        if sym != exp:
-            return {}
-
-        if a_or_d != "A":
-            return {}
-
-        return records
-
-        
     
     def shear(self, client: SecEdgarClient, sheep: dict):
         buy_signals = []
@@ -110,6 +97,7 @@ class SheepShear:
             primary_url = row["primaryDocUrl"]
             collect_wool = CollectWool(primary_doc_url=primary_url)
             records = collect_wool.grab()
+            #self.log.info(records)
             sig = clean_wool(records=records, expected_symbol=expected_symbol)
             if sig:
                 self.buy_signal_queue.put(sig)
@@ -125,12 +113,20 @@ class SheepShear:
         with open(sheep_cache_path, "r", encoding="utf-8") as f:
             sheep_cache = json.load(f)
 
+        now_z = self._utc_now_z()
+
         n = 0
         for sheep in sheep_cache:
             if not isinstance(sheep, dict):
                 continue
             temp = self.shear(client, sheep)
+            sheep["sec_last_accessed"] = now_z
             n += temp
+            
+        # persist updates
+        with open(sheep_cache_path, "w", encoding="utf-8") as f:
+            json.dump(sheep_cache, f, indent=2)
+            
         return n
 
 
@@ -145,14 +141,15 @@ class SheepShear:
             sleep_s = (run_at - now).total_seconds()
 
             if sleep_s > 0:
-                time.sleep(sleep_s)
+                pass
+                #time.sleep(sleep_s)
 
             # Run the cycle exactly at the boundary
             started = datetime.now(self.TZ)
             count = self.run_cycle(client)
             finished = datetime.now(self.TZ)
 
-            log.info(f"[{started.isoformat()}] cycle done: queued={count} duration={(finished-started).total_seconds():.2f}s")
+            self.log.info(f"[{started.isoformat()}] cycle done: queued={count} duration={(finished-started).total_seconds():.2f}s")
 
 
 
