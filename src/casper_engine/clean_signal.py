@@ -1,4 +1,4 @@
-""" spin_yarn.py
+""" clean_signal.py
     
 for functions where we filter and check the pulled files files
 
@@ -10,7 +10,7 @@ return the real trad signals
 
 from typing import Any, Dict, Union, List
 
-def clean_wool(records: Union[Dict[str, Any], List[Dict[str, Any]]], expected_symbol: str) -> Dict[str, Any]:
+def clean_signal(records: Union[Dict[str, Any], List[Dict[str, Any]]], expected_symbol: str) -> Dict[str, Any]:
     # Normalize to a single dict or bail
     if isinstance(records, list):
         if len(records) != 1:

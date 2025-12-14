@@ -14,7 +14,7 @@ import time
 import re
 
 
-class CollectWool:
+class CollectRecords:
     
     HEADERS = {
         "User-Agent": "casper casper@2apollo.net",

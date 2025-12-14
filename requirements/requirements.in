@@ -1,1 +1,5 @@
 kafka-python
+PyYAML
+configparser
+pandas
+requests

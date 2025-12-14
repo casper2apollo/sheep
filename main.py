@@ -25,7 +25,7 @@ def main():
         level=logging.INFO,  # or DEBUG
         format="%(asctime)s | %(levelname)s | %(name)s | %(threadName)s | %(message)s",
     )
-    cfg = load_config("sheep_shear/config/config.yaml")
+    cfg = load_config("sheep/config/config.yaml")
 
     sec_cfg = cfg.get("sec", {})
     path_cfg = cfg.get("path", {})

@@ -1,0 +1,14 @@
+
+
+watchlist: "src/config/watchlist.json"
+queue_maxsize: 100_000
+
+sec_user_agent: "casper casper@2apollo.com"
+sec_poll_freq: 3600 # seconds --> 1 hour
+
+kafka_properties_path: "src/kafka/kafka.properties"
+action_topic: "action-topic"
+heartbeat_topic: "heartbeat-topic"
+sleep_time: 10
+heart_beat_freq: 100
+
