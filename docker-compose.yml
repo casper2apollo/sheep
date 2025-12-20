@@ -4,7 +4,7 @@ services:
     container_name: sheep
     environment:
       VERBOSE: "true"
-      SIGNALS_DB_PATH: /data
+      WATCHLIST_PATH: /data
       KAFKA_PRODUCER_BOOTSTRAP_SERVERS: broker:29092
       KAFKA_OUTPUT_TOPIC: actions
     volumes:

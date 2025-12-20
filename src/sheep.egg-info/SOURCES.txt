@@ -1,0 +1,9 @@
+README
+pyproject.toml
+requirements/requirements.txt
+src/sheep.egg-info/PKG-INFO
+src/sheep.egg-info/SOURCES.txt
+src/sheep.egg-info/dependency_links.txt
+src/sheep.egg-info/requires.txt
+src/sheep.egg-info/top_level.txt
+tests/test_collect_wool.py
