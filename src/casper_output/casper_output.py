@@ -11,7 +11,7 @@ import threading
 from queue import Queue
 from kafka import KafkaProducer
 
-from src.kafka.kafka_utils import send_message
+from src.kafka.utils import send_message
 
 
 class CasperOutput:
