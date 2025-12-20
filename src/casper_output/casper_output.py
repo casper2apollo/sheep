@@ -9,15 +9,17 @@ import time
 import uuid
 import threading
 from queue import Queue
+from kafka import KafkaProducer
 
 from src.kafka.kafka_utils import send_message
 
 
 class CasperOutput:
     
-    def __init__(self, output_queue: Queue, heartbeat_queue: Queue, cfg: dict, log: logging):
+    def __init__(self, output_queue: Queue, heartbeat_queue: Queue, kafka_producer: KafkaProducer, cfg: dict, log: logging):
         self.output_queue = output_queue
         self.heartbeat_queue = heartbeat_queue
+        self.kafka_producer = kafka_producer
         self.cfg = cfg
         self.log = log
     
@@ -28,6 +30,7 @@ class CasperOutput:
             if self.output_queue.qsize() > 0:
                 message = self.output_queue.get()
                 send_message(
+                    producer=self.kafka_producer,
                     topic=self.cfg.get("action_topic"),
                     message=message
                     )
@@ -41,8 +44,9 @@ class CasperOutput:
             if self.heartbeat_queue.qsize() > 0:
                 message = self.heartbeat_queue.get()
                 send_message(
+                    producer=self.kafka_producer,
                     topic=self.cfg.get("heartbeat_topic"),
                     message=message
                     )
             else:
-                time.sleep(self.cfg.get("heart_beat_time"))
+                time.sleep(self.cfg.get("sleep_time"))

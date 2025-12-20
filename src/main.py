@@ -3,58 +3,95 @@
 start all of casper's tasks
 
 """
+import os
+import sys
 import logging
 import yaml
 import threading
 from queue import Queue
+from pathlib import Path
 
 from src.casper_engine.casper_engine import CasperEngine
 from src.casper_output.casper_output import CasperOutput
-from src.kafka.kafka_utils import build_kafka_producer
+from src.kafka.utils import build_kafka_producer
 
 
-log = logging.getLogger(__name__)
+if getattr(sys, "frozen", False): # PyInstaller bundle
+    BASE_DIR = Path(".").resolve()
+else:
+    BASE_DIR = Path(__file__).resolve().parent
+
+MAX_RETRIES = 3
+MAX_ELAPSED_TIME = 300 # 5 min
+MAX_QUEUE_SIZE = 10_000
+
+CONSUMER_PATH = BASE_DIR / "config" / "kafka_consumer.properties"
+PRODUCER_PATH = BASE_DIR / "config" / "kafka_producer.properties"
+
+WATCHLIST_PATH = Path(
+    os.getenv("WATCHLIST_PATH", BASE_DIR / "data")
+) / "watchlist.json"
 
 
 
-def load_config(path: str = "config.yaml") -> dict:
-    with open(path, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f) or {}
+def validate_paths():
+    """Ensure required files and directories exist."""
+    for path in [CONSUMER_PATH, PRODUCER_PATH]:
+        if not path.exists():
+            raise FileNotFoundError(f"Missing required conf file: {path}")
+    
+    if not (WATCHLIST_PATH.exists()):
+        raise FileNotFoundError(f"Missing or empty signals database: {WATCHLIST_PATH}")
+    
+
+    
+def ensure_watchlist(watchlist_path: Path):
+    watchlist_path = Path(watchlist_path)
+    watchlist_path.parent.mkdir(parents=True, exist_ok=True)
+
+    import sqlite3
+    with sqlite3.connect(watchlist_path) as conn:
+        conn.execute("PRAGMA journal_mode=WAL;")
+        conn.execute("PRAGMA busy_timeout=5000;")
+
+
+
+
+def setup_logger() -> logging.Logger:
+    """Configure logging based on VERBOSE environment flag."""
+    verbose = os.getenv("VERBOSE", "true").lower() == "true"
+    log_level = logging.INFO if verbose else logging.WARNING
+    
+    logging.basicConfig(
+        level=log_level,
+        format="%(asctime)s [%(levelname)s] [%(name)s] %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
+    return logging.getLogger("sheep")
+    
+    
 
 
 
 def main():
     
-    logging.basicConfig(
-        level=logging.INFO,  # or DEBUG
-        format="%(asctime)s | %(levelname)s | %(name)s | %(threadName)s | %(message)s",
-    )
-    cfg = load_config("sheep/config/config.yaml")
-    kafka_producer = build_kafka_producer(cfg.get("kafka_properties_path"))
+    validate_paths()
+    ensure_watchlist(WATCHLIST_PATH)
+    log = setup_logger()
     
-    # --- shared queues ---
+    cycle_interval_output = int(os.getenv("CYCLE_INTERVAL", "10")) # 5 mins = 300 sec
+    cycle_interval_engine = int(os.getenv("CYCLE_INTERVAL", "300")) # 5 mins = 300 sec
+    sec_user_agent = str(os.getenv("SEC_USER_AGENT"), "casper casper@2apollo.com")
+    
     # engine -> output
-    output_queue: Queue = Queue(maxsize=cfg.get("queue_maxsize", 100_000) or 100_000)
-    heartbeat_queue: Queue = Queue(maxsize=cfg.get("queue_maxsize", 100_000) or 100_000)
+    output_queue: Queue = Queue(maxsize=MAX_QUEUE_SIZE)
     
-    
-    
-    # start casper engine thread in background (reads input queue and writes output queue)
-    casper_engine = CasperEngine(heartbeat_queue=heartbeat_queue, output_queue=output_queue, cfg=cfg, log=log)
-    casper_engine_thread = threading.Thread(
-        target=casper_engine.run,
-        name="CasperEngine",
-        daemon=True,   # exits when main exits
-    )
-    casper_engine_thread.start()
-    log.info("Initialized casper engine.")
-    
-    
+    kafka_producer, producer_topic = build_kafka_producer(PRODUCER_PATH)
     
     # start casper output thread in background (reads output queue)
-    casper_output = CasperOutput(output_queue=output_queue, heartbeat_queue=heartbeat_queue, kafka_producer=kafka_producer, cfg=cfg, log=log)
+    casper_output = CasperOutput(output_queue=output_queue, kafka_producer=kafka_producer, topic=producer_topic, log=log, cycle_interval=cycle_interval_output)
     casper_output_thread = threading.Thread(
-        target=casper_output.run_action,
+        target=casper_output.run,
         name="CasperOutput",
         daemon=True,   # exits when main exits
     )
@@ -62,10 +99,10 @@ def main():
     log.info("Initialized casper output.")
     
     
-    # this keeps main on
-    casper_output.run_heart()
+    # start casper engine thread in background (reads input queue and writes output queue)
+    casper_engine = CasperEngine(output_queue=output_queue, sec_user_agent=sec_user_agent, watchlist_path=WATCHLIST_PATH, log=log, cycle_interval=cycle_interval_engine)
+    casper_engine.run()
     
     
-
 if __name__ == "__main__":
     main()

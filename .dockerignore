@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtualenvs / env files
+.venv/
+venv/
+.env
+.env.*
+
+# Git
+.git/
+.gitignore
+
+# IDEs
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Data / notebooks (optional; include if you don't want them in image)
+data/
+notebooks/
+
+# SQLite DBs (keep out of images; mount via volume)
+*.db
+*.db-wal
+*.db-shm
+
+# Logs
+*.log
+
+# Test outputs
+.coverage
+htmlcov/
