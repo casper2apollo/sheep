@@ -12,7 +12,7 @@ from queue import Queue
 from pathlib import Path
 
 from src.casper_engine.casper_engine import CasperEngine
-from src.casper_output.casper_output import CasperOutput
+from src.kafka.input_output import CasperOutput
 from src.kafka.utils import build_kafka_producer
 
 
@@ -25,7 +25,6 @@ MAX_RETRIES = 3
 MAX_ELAPSED_TIME = 300 # 5 min
 MAX_QUEUE_SIZE = 10_000
 
-CONSUMER_PATH = BASE_DIR / "config" / "kafka_consumer.properties"
 PRODUCER_PATH = BASE_DIR / "config" / "kafka_producer.properties"
 
 WATCHLIST_PATH = Path(
@@ -36,7 +35,7 @@ WATCHLIST_PATH = Path(
 
 def validate_paths():
     """Ensure required files and directories exist."""
-    for path in [CONSUMER_PATH, PRODUCER_PATH]:
+    for path in [PRODUCER_PATH]:
         if not path.exists():
             raise FileNotFoundError(f"Missing required conf file: {path}")
     
@@ -48,12 +47,6 @@ def validate_paths():
 def ensure_watchlist(watchlist_path: Path):
     watchlist_path = Path(watchlist_path)
     watchlist_path.parent.mkdir(parents=True, exist_ok=True)
-
-    import sqlite3
-    with sqlite3.connect(watchlist_path) as conn:
-        conn.execute("PRAGMA journal_mode=WAL;")
-        conn.execute("PRAGMA busy_timeout=5000;")
-
 
 
 
@@ -79,9 +72,9 @@ def main():
     ensure_watchlist(WATCHLIST_PATH)
     log = setup_logger()
     
-    cycle_interval_output = int(os.getenv("CYCLE_INTERVAL", "10")) # 5 mins = 300 sec
-    cycle_interval_engine = int(os.getenv("CYCLE_INTERVAL", "300")) # 5 mins = 300 sec
-    sec_user_agent = str(os.getenv("SEC_USER_AGENT"), "casper casper@2apollo.com")
+    cycle_interval_output = int(os.getenv("CYCLE_INTERVAL_OUTPUT", "10")) # 5 mins = 300 sec
+    cycle_interval_engine = int(os.getenv("CYCLE_INTERVAL_ENGINE", "300")) # 5 mins = 300 sec
+    sec_user_agent = str(os.getenv("SEC_USER_AGENT", "casper casper@2apollo.com"))
     
     # engine -> output
     output_queue: Queue = Queue(maxsize=MAX_QUEUE_SIZE)

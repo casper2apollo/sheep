@@ -99,7 +99,7 @@ class CasperEngine:
         for _, row in df_filings.iterrows():
             collect_records = CollectRecords(primary_doc_url=row["primaryDocUrl"])
             records = collect_records.grab()
-            sig = clean_signal(records)
+            sig = clean_signal(records=records, expected_symbol=company.get("sec_symbol"))
             if sig:
                 self.output_queue.put(sig)
                 sig["doc_url"] = str(row["primaryDocUrl"])

@@ -3,3 +3,5 @@ PyYAML
 configparser
 pandas
 requests
+pydantic
+lxml

@@ -4,6 +4,8 @@
 #
 #    pip-compile requirements/requirements.in
 #
+annotated-types==0.7.0
+    # via pydantic
 certifi==2025.11.12
     # via requests
 charset-normalizer==3.4.4
@@ -14,10 +16,16 @@ idna==3.11
     # via requests
 kafka-python==2.3.0
     # via -r requirements/requirements.in
+lxml==6.0.2
+    # via -r requirements/requirements.in
 numpy==2.2.6
     # via pandas
 pandas==2.3.3
     # via -r requirements/requirements.in
+pydantic==2.12.5
+    # via -r requirements/requirements.in
+pydantic-core==2.41.5
+    # via pydantic
 python-dateutil==2.9.0.post0
     # via pandas
 pytz==2025.2
@@ -28,6 +36,13 @@ requests==2.32.5
     # via -r requirements/requirements.in
 six==1.17.0
     # via python-dateutil
+typing-extensions==4.15.0
+    # via
+    #   pydantic
+    #   pydantic-core
+    #   typing-inspection
+typing-inspection==0.4.2
+    # via pydantic
 tzdata==2025.3
     # via pandas
 urllib3==2.6.2

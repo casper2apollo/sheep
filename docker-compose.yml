@@ -5,6 +5,9 @@ services:
     environment:
       VERBOSE: "true"
       WATCHLIST_PATH: /data
+      CYCLE_INTERVAL_OUTPUT: "10"
+      CYCLE_INTERVAL_ENGINE: "300"
+      SEC_USER_AGENT: "casper casper@2apollo.com"
       KAFKA_PRODUCER_BOOTSTRAP_SERVERS: broker:29092
       KAFKA_OUTPUT_TOPIC: actions
     volumes:
