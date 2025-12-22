@@ -99,8 +99,10 @@ class CasperEngine:
         for _, row in df_filings.iterrows():
             collect_records = CollectRecords(primary_doc_url=row["primaryDocUrl"])
             records = collect_records.grab()
+            self.log.info(f"[{company.get("sec_symbol")}] record: {records}")
             sig = clean_signal(records=records, expected_symbol=company.get("sec_symbol"))
             if sig:
+                self.log.info(f"[{company.get("sec_symbol")}] SIGNAL: {sig}")
                 self.output_queue.put(sig)
                 sig["doc_url"] = str(row["primaryDocUrl"])
                 signals.append(sig)
@@ -126,7 +128,7 @@ class CasperEngine:
                 m += n
                 all_signals.extend(signals)
                 company["sec_last_accessed"] = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
-
+                self.log.info(f"finished processing {n} records of {company}")
             
             with open(self.watchlist_path, "w", encoding="utf-8") as f:
                 json.dump(watchlist, f, indent=2)

@@ -1,20 +1,875 @@
 [
   {
-    "uuid": "c4b2f4f0-39fa-4a40-9a29-6a8d86c00f7e",
-    "name": "BERKSHIRE HATHAWAY INC",
-    "description": "Warren Buffet",
-    "ibkr": "BRK",
-    "sec_symbol": "BRK",
-    "sec_cik": "0001067983",
-    "sec_last_accessed": "2025-12-21T14:29:19Z"
+    "uuid": "3a3b8edb-14e2-49e2-8a54-10b0c1fdc5c4",
+    "name": "NVIDIA CORP",
+    "description": "AI & GPU computing",
+    "ibkr": "NVDA",
+    "sec_symbol": "NVDA",
+    "sec_cik": "0001045810",
+    "sec_last_accessed": "2025-12-22T19:38:25Z"
   },
   {
-    "uuid": "9e5a2a4d-1b9c-4b01-ae7d-5e3b6c6a7c19",
-    "name": "ALPHABET INC",
-    "description": "Google, GOOG, GOOGL",
+    "uuid": "f2036197-cf91-4e38-b141-68fb439ba0b0",
+    "name": "APPLE INC.",
+    "description": "iPhone, Mac & services",
+    "ibkr": "AAPL",
+    "sec_symbol": "AAPL",
+    "sec_cik": "0000320193",
+    "sec_last_accessed": "2025-12-22T19:38:25Z"
+  },
+  {
+    "uuid": "d2c84e4e-9a4b-4fc3-8e93-dbd56ab1b8a7",
+    "name": "MICROSOFT CORP",
+    "description": "Windows, Azure & enterprise software",
+    "ibkr": "MSFT",
+    "sec_symbol": "MSFT",
+    "sec_cik": "0000789019",
+    "sec_last_accessed": "2025-12-22T19:38:26Z"
+  },
+  {
+    "uuid": "9b68ab92-4a1c-4b90-880e-4b6f8655cb09",
+    "name": "AMAZON COM INC",
+    "description": "E-commerce & AWS cloud",
+    "ibkr": "AMZN",
+    "sec_symbol": "AMZN",
+    "sec_cik": "0001018724",
+    "sec_last_accessed": "2025-12-22T19:38:26Z"
+  },
+  {
+    "uuid": "d824d113-3d71-4ad7-bae3-25118c3be477",
+    "name": "ALPHABET INC. (CLASS A)",
+    "description": "Google parent (Class A)",
     "ibkr": "GOOGL",
     "sec_symbol": "GOOGL",
     "sec_cik": "0001652044",
-    "sec_last_accessed": "2025-12-21T14:29:19Z"
+    "sec_last_accessed": "2025-12-22T19:38:26Z"
+  },
+  {
+    "uuid": "50c5f632-7d5e-4764-a6b8-611fd11523d0",
+    "name": "META PLATFORMS, INC.",
+    "description": "Facebook, Instagram & WhatsApp",
+    "ibkr": "META",
+    "sec_symbol": "META",
+    "sec_cik": "0001326801",
+    "sec_last_accessed": "2025-12-22T19:38:26Z"
+  },
+  {
+    "uuid": "0b15c9b9-74dc-4f0d-b0ea-8f1050c3fd24",
+    "name": "BROADCOM INC.",
+    "description": "Semiconductors & infrastructure software",
+    "ibkr": "AVGO",
+    "sec_symbol": "AVGO",
+    "sec_cik": "0001730168",
+    "sec_last_accessed": "2025-12-22T19:38:27Z"
+  },
+  {
+    "uuid": "2ff6d3f4-e677-449c-93f6-957f379be2b3",
+    "name": "TESLA, INC.",
+    "description": "EVs, energy storage & software",
+    "ibkr": "TSLA",
+    "sec_symbol": "TSLA",
+    "sec_cik": "0001318605",
+    "sec_last_accessed": "2025-12-22T19:38:27Z"
+  },
+  {
+    "uuid": "68f81fb0-100f-41ed-aed6-9ef3f50e510a",
+    "name": "BERKSHIRE HATHAWAY INC",
+    "description": "Conglomerate led by Warren Buffett",
+    "ibkr": "BRK.B",
+    "sec_symbol": "BRK.A",
+    "sec_cik": "0001067983",
+    "sec_last_accessed": "2025-12-22T19:38:27Z"
+  },
+  {
+    "uuid": "c5b2fc91-4a0a-4c01-b2d0-a2026b158e2f",
+    "name": "ELI LILLY & CO",
+    "description": "Pharmaceuticals",
+    "ibkr": "LLY",
+    "sec_symbol": "LLY",
+    "sec_cik": "0000059478",
+    "sec_last_accessed": "2025-12-22T19:38:27Z"
+  },
+  {
+    "uuid": "3cfa3a24-fc75-4e21-a5cf-8243454d74ad",
+    "name": "WALMART INC.",
+    "description": "Retail & e-commerce",
+    "ibkr": "WMT",
+    "sec_symbol": "WMT",
+    "sec_cik": "0000104169",
+    "sec_last_accessed": "2025-12-22T19:38:28Z"
+  },
+  {
+    "uuid": "3f2d9d71-d18d-427c-9f04-00c8eafdb5f9",
+    "name": "JPMORGAN CHASE & CO",
+    "description": "Banking & financial services",
+    "ibkr": "JPM",
+    "sec_symbol": "JPM",
+    "sec_cik": "0000019617",
+    "sec_last_accessed": "2025-12-22T19:38:28Z"
+  },
+  {
+    "uuid": "bfbbac88-1d74-4a7c-90ef-3c3d0cc8d7da",
+    "name": "VISA INC.",
+    "description": "Payments network",
+    "ibkr": "V",
+    "sec_symbol": "V",
+    "sec_cik": "0001403161",
+    "sec_last_accessed": "2025-12-22T19:38:28Z"
+  },
+  {
+    "uuid": "7a0e02fb-991a-479b-8c11-6c965ea01386",
+    "name": "ORACLE CORP",
+    "description": "Database software & cloud services",
+    "ibkr": "ORCL",
+    "sec_symbol": "ORCL",
+    "sec_cik": "0001341439",
+    "sec_last_accessed": "2025-12-22T19:38:28Z"
+  },
+  {
+    "uuid": "6d02ba5e-7c9d-4fe4-b5f4-0ee94d0c7d07",
+    "name": "MASTERCARD INC",
+    "description": "Payments network",
+    "ibkr": "MA",
+    "sec_symbol": "MA",
+    "sec_cik": "0001141391",
+    "sec_last_accessed": "2025-12-22T19:38:29Z"
+  },
+  {
+    "uuid": "cb7b8e76-bd2d-4e96-9d32-5f1f0b4c121b",
+    "name": "JOHNSON & JOHNSON",
+    "description": "Healthcare products & pharmaceuticals",
+    "ibkr": "JNJ",
+    "sec_symbol": "JNJ",
+    "sec_cik": "0000200406",
+    "sec_last_accessed": "2025-12-22T19:38:29Z"
+  },
+  {
+    "uuid": "c1c88c95-4d40-4e3b-8e17-82a55b311d5c",
+    "name": "EXXON MOBIL CORP",
+    "description": "Integrated oil & gas",
+    "ibkr": "XOM",
+    "sec_symbol": "XOM",
+    "sec_cik": "0000034088",
+    "sec_last_accessed": "2025-12-22T19:38:29Z"
+  },
+  {
+    "uuid": "a66aeb8b-71e7-43f8-b8a7-67f4a1a82a9d",
+    "name": "PALANTIR TECHNOLOGIES INC.",
+    "description": "Data analytics platforms",
+    "ibkr": "PLTR",
+    "sec_symbol": "PLTR",
+    "sec_cik": "0001321655",
+    "sec_last_accessed": "2025-12-22T19:38:29Z"
+  },
+  {
+    "uuid": "0ce6f82a-70fd-43c3-b2b4-20a2093ef65a",
+    "name": "BANK OF AMERICA CORP",
+    "description": "Banking & financial services",
+    "ibkr": "BAC",
+    "sec_symbol": "BAC",
+    "sec_cik": "0000070858",
+    "sec_last_accessed": "2025-12-22T19:38:29Z"
+  },
+  {
+    "uuid": "4b376749-603f-4c0f-9e0a-ad65827b29d1",
+    "name": "ABBVIE INC.",
+    "description": "Biopharma (immunology & oncology)",
+    "ibkr": "ABBV",
+    "sec_symbol": "ABBV",
+    "sec_cik": "0001551152",
+    "sec_last_accessed": "2025-12-22T19:38:30Z"
+  },
+  {
+    "uuid": "c8e901fa-291c-44bb-a0cf-9651fcd98a1f",
+    "name": "NETFLIX INC",
+    "description": "Streaming entertainment",
+    "ibkr": "NFLX",
+    "sec_symbol": "NFLX",
+    "sec_cik": "0001065280",
+    "sec_last_accessed": "2025-12-22T19:38:30Z"
+  },
+  {
+    "uuid": "93514456-35a2-4ce6-972b-31e9c8d6596d",
+    "name": "COSTCO WHOLESALE CORP /NEW",
+    "description": "Warehouse retail",
+    "ibkr": "COST",
+    "sec_symbol": "COST",
+    "sec_cik": "0000909832",
+    "sec_last_accessed": "2025-12-22T19:38:30Z"
+  },
+  {
+    "uuid": "0bd127fe-6b02-416e-afbf-cf2e73398d45",
+    "name": "ADVANCED MICRO DEVICES INC",
+    "description": "CPUs & GPUs",
+    "ibkr": "AMD",
+    "sec_symbol": "AMD",
+    "sec_cik": "0000002488",
+    "sec_last_accessed": "2025-12-22T19:38:30Z"
+  },
+  {
+    "uuid": "b1d992d8-7613-4e39-98d4-4c4996b708ee",
+    "name": "HOME DEPOT, INC.",
+    "description": "Home improvement retail",
+    "ibkr": "HD",
+    "sec_symbol": "HD",
+    "sec_cik": "0000354950",
+    "sec_last_accessed": "2025-12-22T19:38:31Z"
+  },
+  {
+    "uuid": "fa30c48c-03f4-4548-bc4b-3ebd93288e58",
+    "name": "PROCTER & GAMBLE CO",
+    "description": "Consumer staples",
+    "ibkr": "PG",
+    "sec_symbol": "PG",
+    "sec_cik": "0000080424",
+    "sec_last_accessed": "2025-12-22T19:38:31Z"
+  },
+  {
+    "uuid": "dfd081c5-a8f7-4f55-9306-14f69c44287f",
+    "name": "GENERAL ELECTRIC CO",
+    "description": "Aerospace & industrial",
+    "ibkr": "GE",
+    "sec_symbol": "GE",
+    "sec_cik": "0000040545",
+    "sec_last_accessed": "2025-12-22T19:38:31Z"
+  },
+  {
+    "uuid": "0a1aa32f-7520-4f4a-bcaa-539774f70bfb",
+    "name": "MICRON TECHNOLOGY INC",
+    "description": "Memory semiconductors",
+    "ibkr": "MU",
+    "sec_symbol": "MU",
+    "sec_cik": "0000723125",
+    "sec_last_accessed": "2025-12-22T19:38:31Z"
+  },
+  {
+    "uuid": "67a90ba9-40f5-46a7-a29c-77a76bc11fff",
+    "name": "CISCO SYSTEMS, INC.",
+    "description": "Networking & cybersecurity",
+    "ibkr": "CSCO",
+    "sec_symbol": "CSCO",
+    "sec_cik": "0000858877",
+    "sec_last_accessed": "2025-12-22T19:38:32Z"
+  },
+  {
+    "uuid": "cfab057f-14a8-4c25-bb81-ff2069f55f0b",
+    "name": "COCA COLA CO",
+    "description": "Beverages",
+    "ibkr": "KO",
+    "sec_symbol": "KO",
+    "sec_cik": "0000021344",
+    "sec_last_accessed": "2025-12-22T19:38:32Z"
+  },
+  {
+    "uuid": "1965eb83-5f58-4b3c-8f17-004f6974bc57",
+    "name": "CHEVRON CORP",
+    "description": "Integrated oil & gas",
+    "ibkr": "CVX",
+    "sec_symbol": "CVX",
+    "sec_cik": "0000093410",
+    "sec_last_accessed": "2025-12-22T19:38:32Z"
+  },
+  {
+    "uuid": "6f9c4042-2ce8-4e45-8584-30c77c62593c",
+    "name": "WELLS FARGO & COMPANY/MN",
+    "description": "Banking & financial services",
+    "ibkr": "WFC",
+    "sec_symbol": "WFC",
+    "sec_cik": "0000072971",
+    "sec_last_accessed": "2025-12-22T19:38:32Z"
+  },
+  {
+    "uuid": "34410e17-d6db-4fc1-a13d-18fe23c191ca",
+    "name": "UNITEDHEALTH GROUP INC",
+    "description": "Health insurance & services",
+    "ibkr": "UNH",
+    "sec_symbol": "UNH",
+    "sec_cik": "0000731766",
+    "sec_last_accessed": "2025-12-22T19:38:32Z"
+  },
+  {
+    "uuid": "90e69dd9-737a-4b76-a998-e66ac86270c6",
+    "name": "MORGAN STANLEY",
+    "description": "Investment bank & wealth management",
+    "ibkr": "MS",
+    "sec_symbol": "MS",
+    "sec_cik": "0000895421",
+    "sec_last_accessed": "2025-12-22T19:38:33Z"
+  },
+  {
+    "uuid": "07a61d94-2c9e-4b7c-bce6-bfd17c0a8ee1",
+    "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+    "description": "Enterprise IT & hybrid cloud",
+    "ibkr": "IBM",
+    "sec_symbol": "IBM",
+    "sec_cik": "0000051143",
+    "sec_last_accessed": "2025-12-22T19:38:33Z"
+  },
+  {
+    "uuid": "0fd553a1-1309-4bce-a1e9-8ad9e1e61fd5",
+    "name": "CATERPILLAR INC",
+    "description": "Construction & mining equipment",
+    "ibkr": "CAT",
+    "sec_symbol": "CAT",
+    "sec_cik": "0000018230",
+    "sec_last_accessed": "2025-12-22T19:38:33Z"
+  },
+  {
+    "uuid": "7e1d4076-5ed2-4c1f-9f20-e17b09f8c6d4",
+    "name": "GOLDMAN SACHS GROUP INC",
+    "description": "Investment banking & trading",
+    "ibkr": "GS",
+    "sec_symbol": "GS",
+    "sec_cik": "0000886982",
+    "sec_last_accessed": "2025-12-22T19:38:33Z"
+  },
+  {
+    "uuid": "68ea2f71-f2aa-413c-8e05-c5e0fc7be06c",
+    "name": "AMERICAN EXPRESS CO",
+    "description": "Payments & card issuer",
+    "ibkr": "AXP",
+    "sec_symbol": "AXP",
+    "sec_cik": "0000004962",
+    "sec_last_accessed": "2025-12-22T19:38:34Z"
+  },
+  {
+    "uuid": "02f6707d-312f-44af-8dbc-0c9bc4c6e95d",
+    "name": "MERCK & CO., INC.",
+    "description": "Pharmaceuticals",
+    "ibkr": "MRK",
+    "sec_symbol": "MRK",
+    "sec_cik": "0000310158",
+    "sec_last_accessed": "2025-12-22T19:38:34Z"
+  },
+  {
+    "uuid": "5e4bdca1-f995-495e-bdfe-284fb9ec49a4",
+    "name": "PHILIP MORRIS INTERNATIONAL INC",
+    "description": "Tobacco & nicotine products",
+    "ibkr": "PM",
+    "sec_symbol": "PM",
+    "sec_cik": "0001413329",
+    "sec_last_accessed": "2025-12-22T19:38:34Z"
+  },
+  {
+    "uuid": "b6a7dc95-8da9-4efe-8450-2c10f767ba5d",
+    "name": "RTX CORP",
+    "description": "Aerospace & defense",
+    "ibkr": "RTX",
+    "sec_symbol": "RTX",
+    "sec_cik": "0000101829",
+    "sec_last_accessed": "2025-12-22T19:38:34Z"
+  },
+  {
+    "uuid": "07d73280-cef7-4a70-b734-c26ff5d8de76",
+    "name": "SALESFORCE, INC.",
+    "description": "CRM software & cloud",
+    "ibkr": "CRM",
+    "sec_symbol": "CRM",
+    "sec_cik": "0001108524",
+    "sec_last_accessed": "2025-12-22T19:38:35Z"
+  },
+  {
+    "uuid": "c3f9c58d-cda1-42c7-aaf3-890992279c1b",
+    "name": "APPLOVIN CORP",
+    "description": "Mobile advertising & app platform",
+    "ibkr": "APP",
+    "sec_symbol": "APP",
+    "sec_cik": "0001751008",
+    "sec_last_accessed": "2025-12-22T19:38:35Z"
+  },
+  {
+    "uuid": "2c606b7b-90d6-41e8-8988-9f91b905db76",
+    "name": "MCDONALDS CORP",
+    "description": "Quick-service restaurants",
+    "ibkr": "MCD",
+    "sec_symbol": "MCD",
+    "sec_cik": "0000063908",
+    "sec_last_accessed": "2025-12-22T19:38:35Z"
+  },
+  {
+    "uuid": "4e399f86-86a4-41bc-bd94-a9d05da083e2",
+    "name": "LAM RESEARCH CORP",
+    "description": "Semiconductor equipment",
+    "ibkr": "LRCX",
+    "sec_symbol": "LRCX",
+    "sec_cik": "0000707549",
+    "sec_last_accessed": "2025-12-22T19:38:35Z"
+  },
+  {
+    "uuid": "5e1a38eb-1fab-4ef4-a2d2-ed3de6a2bb2f",
+    "name": "ABBOTT LABORATORIES",
+    "description": "Medical devices & diagnostics",
+    "ibkr": "ABT",
+    "sec_symbol": "ABT",
+    "sec_cik": "0000001800",
+    "sec_last_accessed": "2025-12-22T19:38:36Z"
+  },
+  {
+    "uuid": "dc9bd38a-e7a5-4e77-86bb-acde1cb37b54",
+    "name": "T-MOBILE US, INC.",
+    "description": "Wireless telecom",
+    "ibkr": "TMUS",
+    "sec_symbol": "TMUS",
+    "sec_cik": "0001283699",
+    "sec_last_accessed": "2025-12-22T19:38:36Z"
+  },
+  {
+    "uuid": "5a0b062f-2d2f-4c37-a877-2dc1fb0a8e21",
+    "name": "THERMO FISHER SCIENTIFIC INC.",
+    "description": "Life sciences tools",
+    "ibkr": "TMO",
+    "sec_symbol": "TMO",
+    "sec_cik": "0000097745",
+    "sec_last_accessed": "2025-12-22T19:38:36Z"
+  },
+  {
+    "uuid": "a6e048c4-2a8b-43a3-9605-65580c6b471f",
+    "name": "CITIGROUP INC",
+    "description": "Banking & financial services",
+    "ibkr": "C",
+    "sec_symbol": "C",
+    "sec_cik": "0000831001",
+    "sec_last_accessed": "2025-12-22T19:38:36Z"
+  },
+  {
+    "uuid": "f5eb6e0b-9f95-4b50-8c75-7a711bc1a2f2",
+    "name": "PEPSICO INC",
+    "description": "Beverages & snacks",
+    "ibkr": "PEP",
+    "sec_symbol": "PEP",
+    "sec_cik": "0000077476",
+    "sec_last_accessed": "2025-12-22T19:38:36Z"
+  },
+  {
+    "uuid": "9a02c8f0-bcad-4988-a0ff-4d71d1bb4e92",
+    "name": "WALT DISNEY CO",
+    "description": "Media & entertainment",
+    "ibkr": "DIS",
+    "sec_symbol": "DIS",
+    "sec_cik": "0001744489",
+    "sec_last_accessed": "2025-12-22T19:38:37Z"
+  },
+  {
+    "uuid": "edc9f2c4-c1f5-414d-a582-02d4d9f2d3b9",
+    "name": "LINDE PLC",
+    "description": "Industrial gases",
+    "ibkr": "LIN",
+    "sec_symbol": "LIN",
+    "sec_cik": "0001707925",
+    "sec_last_accessed": "2025-12-22T19:38:37Z"
+  },
+  {
+    "uuid": "f25e8b23-8d24-49b8-bad1-2e6b2e83e5c4",
+    "name": "INTUIT INC.",
+    "description": "Tax & accounting software",
+    "ibkr": "INTU",
+    "sec_symbol": "INTU",
+    "sec_cik": "0000896878",
+    "sec_last_accessed": "2025-12-22T19:38:37Z"
+  },
+  {
+    "uuid": "f6f0e3e6-b16e-4c93-a39b-6ea9f7a3d5c8",
+    "name": "QUALCOMM INC/DE",
+    "description": "Wireless chipsets & IP licensing",
+    "ibkr": "QCOM",
+    "sec_symbol": "QCOM",
+    "sec_cik": "0000804328",
+    "sec_last_accessed": "2025-12-22T19:38:37Z"
+  },
+  {
+    "uuid": "7a3d1f4b-9d9e-4be8-bf4f-6f3c0b5e8d1f",
+    "name": "SCHWAB CHARLES CORP",
+    "description": "Brokerage & wealth management",
+    "ibkr": "SCHW",
+    "sec_symbol": "SCHW",
+    "sec_cik": "0000316709",
+    "sec_last_accessed": "2025-12-22T19:38:38Z"
+  },
+  {
+    "uuid": "b95c2a3f-1f48-4f1b-9b2f-4e3f9b5c7a21",
+    "name": "GE VERNOVA INC.",
+    "description": "Energy equipment & power solutions",
+    "ibkr": "GEV",
+    "sec_symbol": "GEV",
+    "sec_cik": "0001996810",
+    "sec_last_accessed": "2025-12-22T19:38:38Z"
+  },
+  {
+    "uuid": "b36d3f1a-0e2a-4b27-9d0b-2c2e7d6c9b14",
+    "name": "AMGEN INC",
+    "description": "Biotechnology",
+    "ibkr": "AMGN",
+    "sec_symbol": "AMGN",
+    "sec_cik": "0000318154",
+    "sec_last_accessed": "2025-12-22T19:38:38Z"
+  },
+  {
+    "uuid": "8c9a0b5e-7f4d-4d0b-8b6b-4e2a8f0c2a19",
+    "name": "INTEL CORP",
+    "description": "CPUs & semiconductors",
+    "ibkr": "INTC",
+    "sec_symbol": "INTC",
+    "sec_cik": "0000050863",
+    "sec_last_accessed": "2025-12-22T19:38:38Z"
+  },
+  {
+    "uuid": "4a0e7b33-0ac5-4f65-b4b1-1a2d6b9b8d2c",
+    "name": "BOOKING HOLDINGS INC.",
+    "description": "Online travel",
+    "ibkr": "BKNG",
+    "sec_symbol": "BKNG",
+    "sec_cik": "0001075531",
+    "sec_last_accessed": "2025-12-22T19:38:38Z"
+  },
+  {
+    "uuid": "1b9f5f6a-0d1a-4f2c-a9d1-3c5e7f0a1b2c",
+    "name": "TJX COMPANIES INC /DE/",
+    "description": "Off-price retail",
+    "ibkr": "TJX",
+    "sec_symbol": "TJX",
+    "sec_cik": "0000109198",
+    "sec_last_accessed": "2025-12-22T19:38:39Z"
+  },
+  {
+    "uuid": "d0f2a1b3-4c5d-4e6f-8a9b-0c1d2e3f4a5b",
+    "name": "AT&T INC.",
+    "description": "Telecom services",
+    "ibkr": "T",
+    "sec_symbol": "T",
+    "sec_cik": "0000732717",
+    "sec_last_accessed": "2025-12-22T19:38:39Z"
+  },
+  {
+    "uuid": "a1b2c3d4-e5f6-47a8-9b0c-1d2e3f4a5b6c",
+    "name": "BOEING CO",
+    "description": "Aerospace & defense",
+    "ibkr": "BA",
+    "sec_symbol": "BA",
+    "sec_cik": "0000012927",
+    "sec_last_accessed": "2025-12-22T19:38:39Z"
+  },
+  {
+    "uuid": "c3d4e5f6-a7b8-49c0-8d1e-2f3a4b5c6d7e",
+    "name": "BLACKROCK, INC.",
+    "description": "Asset management",
+    "ibkr": "BLK",
+    "sec_symbol": "BLK",
+    "sec_cik": "0002012383",
+    "sec_last_accessed": "2025-12-22T19:38:40Z"
+  },
+  {
+    "uuid": "e5f6a7b8-c9d0-41e2-8f3a-4b5c6d7e8f9a",
+    "name": "UBER TECHNOLOGIES, INC",
+    "description": "Ride-sharing & delivery platform",
+    "ibkr": "UBER",
+    "sec_symbol": "UBER",
+    "sec_cik": "0001543151",
+    "sec_last_accessed": "2025-12-22T19:38:40Z"
+  },
+  {
+    "uuid": "f7a8b9c0-d1e2-43f4-8a5b-6c7d8e9f0a1b",
+    "name": "VERIZON COMMUNICATIONS INC",
+    "description": "Telecom services",
+    "ibkr": "VZ",
+    "sec_symbol": "VZ",
+    "sec_cik": "0000732712",
+    "sec_last_accessed": "2025-12-22T19:38:40Z"
+  },
+  {
+    "uuid": "0a1b2c3d-4e5f-47a8-9b0c-1d2e3f4a5b6c",
+    "name": "ACCENTURE PLC",
+    "description": "IT consulting & services",
+    "ibkr": "ACN",
+    "sec_symbol": "ACN",
+    "sec_cik": "0001467373",
+    "sec_last_accessed": "2025-12-22T19:38:40Z"
+  },
+  {
+    "uuid": "1c2d3e4f-5a6b-47c8-9d0e-1f2a3b4c5d6e",
+    "name": "NEXTERA ENERGY INC",
+    "description": "Electric utility & renewables",
+    "ibkr": "NEE",
+    "sec_symbol": "NEE",
+    "sec_cik": "0000753308",
+    "sec_last_accessed": "2025-12-22T19:38:41Z"
+  },
+  {
+    "uuid": "2e3f4a5b-6c7d-48e9-0a1b-2c3d4e5f6a7b",
+    "name": "KLA CORP",
+    "description": "Semiconductor equipment & metrology",
+    "ibkr": "KLAC",
+    "sec_symbol": "KLAC",
+    "sec_cik": "0000319201",
+    "sec_last_accessed": "2025-12-22T19:38:41Z"
+  },
+  {
+    "uuid": "3f4a5b6c-7d8e-490a-1b2c-3d4e5f6a7b8c",
+    "name": "AMPHENOL CORP /DE/",
+    "description": "Electronic connectors & components",
+    "ibkr": "APH",
+    "sec_symbol": "APH",
+    "sec_cik": "0000820313",
+    "sec_last_accessed": "2025-12-22T19:38:41Z"
+  },
+  {
+    "uuid": "4a5b6c7d-8e9f-401b-2c3d-4e5f6a7b8c9d",
+    "name": "ARISTA NETWORKS, INC.",
+    "description": "Data-center networking",
+    "ibkr": "ANET",
+    "sec_symbol": "ANET",
+    "sec_cik": "0001596532",
+    "sec_last_accessed": "2025-12-22T19:38:41Z"
+  },
+  {
+    "uuid": "5b6c7d8e-9f0a-412c-3d4e-5f6a7b8c9d0e",
+    "name": "TEXAS INSTRUMENTS INC",
+    "description": "Analog & embedded semiconductors",
+    "ibkr": "TXN",
+    "sec_symbol": "TXN",
+    "sec_cik": "0000097476",
+    "sec_last_accessed": "2025-12-22T19:38:42Z"
+  },
+  {
+    "uuid": "6c7d8e9f-0a1b-423d-4e5f-6a7b8c9d0e1f",
+    "name": "SERVICENOW, INC.",
+    "description": "Enterprise workflow software",
+    "ibkr": "NOW",
+    "sec_symbol": "NOW",
+    "sec_cik": "0001373715",
+    "sec_last_accessed": "2025-12-22T19:38:42Z"
+  },
+  {
+    "uuid": "7d8e9f0a-1b2c-434e-5f6a-7b8c9d0e1f2a",
+    "name": "DANAHER CORP /DE/",
+    "description": "Life sciences & diagnostics",
+    "ibkr": "DHR",
+    "sec_symbol": "DHR",
+    "sec_cik": "0000313616",
+    "sec_last_accessed": "2025-12-22T19:38:42Z"
+  },
+  {
+    "uuid": "8e9f0a1b-2c3d-445f-6a7b-8c9d0e1f2a3b",
+    "name": "S&P GLOBAL INC.",
+    "description": "Financial data & analytics",
+    "ibkr": "SPGI",
+    "sec_symbol": "SPGI",
+    "sec_cik": "0000064040",
+    "sec_last_accessed": "2025-12-22T19:38:43Z"
+  },
+  {
+    "uuid": "9f0a1b2c-3d4e-456a-7b8c-9d0e1f2a3b4c",
+    "name": "CAPITAL ONE FINANCIAL CORP",
+    "description": "Consumer banking & credit cards",
+    "ibkr": "COF",
+    "sec_symbol": "COF",
+    "sec_cik": "0000927628",
+    "sec_last_accessed": "2025-12-22T19:38:43Z"
+  },
+  {
+    "uuid": "0a1b2c3d-4e5f-467b-8c9d-0e1f2a3b4c5d",
+    "name": "GILEAD SCIENCES, INC.",
+    "description": "Biopharma (antivirals & oncology)",
+    "ibkr": "GILD",
+    "sec_symbol": "GILD",
+    "sec_cik": "0000882095",
+    "sec_last_accessed": "2025-12-22T19:38:43Z"
+  },
+  {
+    "uuid": "1b2c3d4e-5f6a-478c-9d0e-1f2a3b4c5d6e",
+    "name": "ADOBE INC.",
+    "description": "Creative & digital media software",
+    "ibkr": "ADBE",
+    "sec_symbol": "ADBE",
+    "sec_cik": "0000796343",
+    "sec_last_accessed": "2025-12-22T19:38:43Z"
+  },
+  {
+    "uuid": "2c3d4e5f-6a7b-489d-0e1f-2a3b4c5d6e7f",
+    "name": "PFIZER INC",
+    "description": "Pharmaceuticals",
+    "ibkr": "PFE",
+    "sec_symbol": "PFE",
+    "sec_cik": "0000078003",
+    "sec_last_accessed": "2025-12-22T19:38:44Z"
+  },
+  {
+    "uuid": "3d4e5f6a-7b8c-490e-1f2a-3b4c5d6e7f8a",
+    "name": "BOSTON SCIENTIFIC CORP",
+    "description": "Medical devices",
+    "ibkr": "BSX",
+    "sec_symbol": "BSX",
+    "sec_cik": "0000885725",
+    "sec_last_accessed": "2025-12-22T19:38:44Z"
+  },
+  {
+    "uuid": "4e5f6a7b-8c9d-401f-2a3b-4c5d6e7f8a9b",
+    "name": "UNION PACIFIC CORP",
+    "description": "Railroad transportation",
+    "ibkr": "UNP",
+    "sec_symbol": "UNP",
+    "sec_cik": "0000100885",
+    "sec_last_accessed": "2025-12-22T19:38:44Z"
+  },
+  {
+    "uuid": "5f6a7b8c-9d0e-412a-3b4c-5d6e7f8a9b0c",
+    "name": "STRYKER CORP",
+    "description": "Medical devices",
+    "ibkr": "SYK",
+    "sec_symbol": "SYK",
+    "sec_cik": "0000310764",
+    "sec_last_accessed": "2025-12-22T19:38:44Z"
+  },
+  {
+    "uuid": "6a7b8c9d-0e1f-423b-4c5d-6e7f8a9b0c1d",
+    "name": "LOWES COMPANIES INC",
+    "description": "Home improvement retail",
+    "ibkr": "LOW",
+    "sec_symbol": "LOW",
+    "sec_cik": "0000060667",
+    "sec_last_accessed": "2025-12-22T19:38:45Z"
+  },
+  {
+    "uuid": "7b8c9d0e-1f2a-434c-5d6e-7f8a9b0c1d2e",
+    "name": "ANALOG DEVICES INC",
+    "description": "Analog semiconductors",
+    "ibkr": "ADI",
+    "sec_symbol": "ADI",
+    "sec_cik": "0000006281",
+    "sec_last_accessed": "2025-12-22T19:38:45Z"
+  },
+  {
+    "uuid": "8c9d0e1f-2a3b-445d-6e7f-8a9b0c1d2e3f",
+    "name": "PROGRESSIVE CORP/OH/",
+    "description": "Property & casualty insurance",
+    "ibkr": "PGR",
+    "sec_symbol": "PGR",
+    "sec_cik": "0000080661",
+    "sec_last_accessed": "2025-12-22T19:38:45Z"
+  },
+  {
+    "uuid": "9d0e1f2a-3b4c-456e-7f8a-9b0c1d2e3f4a",
+    "name": "PALO ALTO NETWORKS INC",
+    "description": "Cybersecurity",
+    "ibkr": "PANW",
+    "sec_symbol": "PANW",
+    "sec_cik": "0001327567",
+    "sec_last_accessed": "2025-12-22T19:38:46Z"
+  },
+  {
+    "uuid": "0e1f2a3b-4c5d-467f-8a9b-0c1d2e3f4a5b",
+    "name": "WELLTOWER INC.",
+    "description": "Healthcare REIT",
+    "ibkr": "WELL",
+    "sec_symbol": "WELL",
+    "sec_cik": "0000766704",
+    "sec_last_accessed": "2025-12-22T19:38:46Z"
+  },
+  {
+    "uuid": "1f2a3b4c-5d6e-478a-9b0c-1d2e3f4a5b6c",
+    "name": "DEERE & CO",
+    "description": "Agriculture & construction equipment",
+    "ibkr": "DE",
+    "sec_symbol": "DE",
+    "sec_cik": "0000315189",
+    "sec_last_accessed": "2025-12-22T19:38:46Z"
+  },
+  {
+    "uuid": "2a3b4c5d-6e7f-489b-0c1d-2e3f4a5b6c7d",
+    "name": "MEDTRONIC PLC",
+    "description": "Medical devices",
+    "ibkr": "MDT",
+    "sec_symbol": "MDT",
+    "sec_cik": "0001613103",
+    "sec_last_accessed": "2025-12-22T19:38:47Z"
+  },
+  {
+    "uuid": "3b4c5d6e-7f8a-490c-1d2e-3f4a5b6c7d8e",
+    "name": "HONEYWELL INTERNATIONAL INC",
+    "description": "Industrial & aerospace technology",
+    "ibkr": "HON",
+    "sec_symbol": "HON",
+    "sec_cik": "0000773840",
+    "sec_last_accessed": "2025-12-22T19:38:47Z"
+  },
+  {
+    "uuid": "4c5d6e7f-8a9b-401d-2e3f-4a5b6c7d8e9f",
+    "name": "EATON CORP PLC",
+    "description": "Power management",
+    "ibkr": "ETN",
+    "sec_symbol": "ETN",
+    "sec_cik": "0001551182",
+    "sec_last_accessed": "2025-12-22T19:38:47Z"
+  },
+  {
+    "uuid": "5d6e7f8a-9b0c-412e-3f4a-5b6c7d8e9f0a",
+    "name": "CHUBB LTD",
+    "description": "Property & casualty insurance",
+    "ibkr": "CB",
+    "sec_symbol": "CB",
+    "sec_cik": "0000896159",
+    "sec_last_accessed": "2025-12-22T19:38:47Z"
+  },
+  {
+    "uuid": "6e7f8a9b-0c1d-423f-4a5b-6c7d8e9f0a1b",
+    "name": "CROWDSTRIKE HOLDINGS, INC.",
+    "description": "Cybersecurity",
+    "ibkr": "CRWD",
+    "sec_symbol": "CRWD",
+    "sec_cik": "0001535527",
+    "sec_last_accessed": "2025-12-22T19:38:48Z"
+  },
+  {
+    "uuid": "7f8a9b0c-1d2e-434a-5b6c-7d8e9f0a1b2c",
+    "name": "BLACKSTONE INC.",
+    "description": "Alternative asset management",
+    "ibkr": "BX",
+    "sec_symbol": "BX",
+    "sec_cik": "0001393818",
+    "sec_last_accessed": "2025-12-22T19:38:48Z"
+  },
+  {
+    "uuid": "8a9b0c1d-2e3f-445b-6c7d-8e9f0a1b2c3d",
+    "name": "PROLOGIS, INC.",
+    "description": "Industrial real estate REIT",
+    "ibkr": "PLD",
+    "sec_symbol": "PLD",
+    "sec_cik": "0001045609",
+    "sec_last_accessed": "2025-12-22T19:38:48Z"
+  },
+  {
+    "uuid": "9b0c1d2e-3f4a-456c-7d8e-9f0a1b2c3d4e",
+    "name": "KKR & CO. INC.",
+    "description": "Alternative asset management",
+    "ibkr": "KKR",
+    "sec_symbol": "KKR",
+    "sec_cik": "0001404912",
+    "sec_last_accessed": "2025-12-22T19:38:48Z"
+  },
+  {
+    "uuid": "0c1d2e3f-4a5b-467d-8e9f-0a1b2c3d4e5f",
+    "name": "VERTEX PHARMACEUTICALS INC / MA",
+    "description": "Biotechnology",
+    "ibkr": "VRTX",
+    "sec_symbol": "VRTX",
+    "sec_cik": "0000875320",
+    "sec_last_accessed": "2025-12-22T19:38:49Z"
+  },
+  {
+    "uuid": "1d2e3f4a-5b6c-478e-9f0a-1b2c3d4e5f6a",
+    "name": "CONOCOPHILLIPS",
+    "description": "Oil & gas exploration & production",
+    "ibkr": "COP",
+    "sec_symbol": "COP",
+    "sec_cik": "0001163165",
+    "sec_last_accessed": "2025-12-22T19:38:49Z"
+  },
+  {
+    "uuid": "2e3f4a5b-6c7d-489f-0a1b-2c3d4e5f6a7b",
+    "name": "NEWMONT CORP /DE/",
+    "description": "Gold mining",
+    "ibkr": "NEM",
+    "sec_symbol": "NEM",
+    "sec_cik": "0001164727",
+    "sec_last_accessed": "2025-12-22T19:38:49Z"
   }
 ]

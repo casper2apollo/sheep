@@ -2,7 +2,7 @@ import os
 import math
 import pytest
 
-from sheep.yarn.collect_wool import CollectWool
+from src.casper_engine.collect_records import CollectRecords
 
 # run tests with 
 # RUN_SEC_INTEGRATION=1 python -m pytest -q
@@ -90,6 +90,18 @@ CASES = [
             "issuer_name": "MSP Recovery, Inc.",
             "issuer_symbol": "LIFW",
         }
+    ),
+    (
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581024000232/xslF345X05/wk-form4_1721337595.xml",
+        {
+            "security": "Common Stock",
+            "total_amount": 1_112_629,
+            "A_or_D": "A",
+            "avg_price": 2.5087537535,
+            "total_amount_owned": 3_727_033,
+            "issuer_name": "Serve Robotics Inc. /DE/",
+            "issuer_symbol": "SERV",
+        }
     )
 ]
 
@@ -135,7 +147,7 @@ def test_collect_wool_grab_matches_expected(primary_doc_url, expected):
     if not os.getenv("RUN_SEC_INTEGRATION"):
         pytest.skip("Set RUN_SEC_INTEGRATION=1 to run live SEC integration tests.")
 
-    records = CollectWool(primary_doc_url).grab()
+    records = CollectRecords(primary_doc_url).grab()
 
     assert isinstance(records, list), f"Expected list of dicts, got: {type(records)}"
     assert records, "Expected at least one record from grab()"

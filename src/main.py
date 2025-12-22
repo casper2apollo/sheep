@@ -72,7 +72,7 @@ def main():
     ensure_watchlist(WATCHLIST_PATH)
     log = setup_logger()
     
-    cycle_interval_output = int(os.getenv("CYCLE_INTERVAL_OUTPUT", "10")) # 5 mins = 300 sec
+    cycle_interval_output = int(os.getenv("CYCLE_INTERVAL_OUTPUT", "10"))
     cycle_interval_engine = int(os.getenv("CYCLE_INTERVAL_ENGINE", "300")) # 5 mins = 300 sec
     sec_user_agent = str(os.getenv("SEC_USER_AGENT", "casper casper@2apollo.com"))
     
